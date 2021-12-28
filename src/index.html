@@ -1,12 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>My First Parcel App</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="app.js"></script>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div class="login-card">
+      <div class="login-card__content">
+        <div class="login-card__header">
+          <span>Login</span>
+        </div>
+        <div class="login-card__form-container">
+          <div class="login-card__form-content">
+            <form>
+              <div class="input">
+                <input type="text" name="username" id="username" class="login-card__form-input" placeholder=" ">
+                <label class="login-card__form-input-label" for="username">Username</label>
+              </div>
+              <div class="input">
+                <input type="password" name="password" id="password" class="login-card__form-input" placeholder=" ">
+                <label class="login-card__form-input-label" for="password">Password</label>
+              </div>
+              <div class="login-card__form-forgot">
+                <a href="#">Forgot Password?</a>
+              </div>
+              <button type="submit" class="login-card__submit-button">Login</button>
+            </form>
+            <div class="login-card__signup-text">
+              <span>Not a member? <a href="#">Signup</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
