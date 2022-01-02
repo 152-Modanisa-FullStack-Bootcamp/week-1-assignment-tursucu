@@ -1,4 +1,356 @@
-h1 {
-  color: hotpink;
-  font-family: cursive;
+/* Default font and small reset css*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+input {
+  border: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Color control*/
+:root {
+  --white: rgb(255, 255, 255);
+  --blue: rgb(10, 102, 194);
+  --black: rgb(0, 0, 0);
+  --black-a90: rgba(0,0,0,0.9);
+  --black-a60: rgba(0,0,0,0.6);
+  --black-a08: rgba(0,0,0,0.08); 
+  --bg-color: rgb(243, 242, 239);
+  --bg-color-img: rgb(238, 243, 248);
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  min-height: 100vh;
+}
+
+.post-card__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--white);
+  width: 550px;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 1px var(--black-a08);
+}
+
+/*Profile Header*/
+.post-card__header {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 8px 40px 0 16px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  margin-right: 12px;
+  flex-grow: 1;
+}
+
+.header-meta {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  margin-left: 8px;
+  position: relative;
+}
+
+.post-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  display: flex;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black-a90);
+}
+
+.title span:hover {
+  color: var(blue);
+  text-decoration: underline;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  color: var(--black-a60);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.followers {
+  display: block;
+  color: var(--black-a60);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/*Control Button*/
+.control-menu {
+  position: absolute;
+  right: 12px;
+  top: 4px;
+  text-align: right;
+}
+
+.control-menu__button {
+  height: 32px;
+  width: 32px;
+  min-width: auto;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.control-menu__button:hover {
+  background-color: var(--black-a08);
+  color: var(--black-a60);
+}
+
+/*Description*/
+.post-card__description {
+  display: block;
+  position: relative;
+}
+
+.description__more-description {
+  display: block;
+  position: relative;
+  line-height: 20px;
+  margin: 0 16px;
+  max-height: 60px;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  vertical-align: baseline;
+}
+
+.show-more {
+  background-color: var(--white);
+  line-height: inherit;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0;
+  padding-left: 8px;
+  color: var(--black-a60);
+  font-weight: 400;
+}
+
+/*Article*/
+.post-card__article {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  background-color: var(--bg-color-img);
+}
+
+.article-img a {
+  display: flex;
+}
+
+.article-img img {
+  position: static;
+  top: auto;
+  left: auto;
+  background-position: 50%;
+  background-size: cover;
+  object-position: center;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.post-card__article-content {
+  padding: 8px 12px;
+}
+
+.post-card__article-title {
+  line-height: 2rem;
+  max-height: 4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-card__article-title h2 {
+  color: var(--black-a90);
+}
+
+.post-card__article-title h3 {
+  margin-top: 8px;
+  max-height: none;
+  color: var(--black-a60);
+}
+
+/*Social Section*/
+.post-card__footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card__social-count {
+  display: flex;
+  margin: 0 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--black-a08);
+}
+
+.social-count__social-button-group {
+  display: flex;
+  flex-grow: 1;
+  margin-right: 4px;
+  align-items: center;
+  color: var(--black-a60);
+}
+
+.social-button {
+  display: flex;
+}
+
+.social-button span {
+  color: var(--black-a60);
+  line-height: 15px;
+  margin-left: 4px;
+}
+
+.social-button:hover,
+.comment-button:hover {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.social-button img {
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  vertical-align: middle;
+}
+
+.social-button:hover span,
+.comment-button:hover span {
+  text-decoration: underline;
+  color: var(--blue);
+}
+
+.social-count__comment {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.social-count__comment span {
+  color: var(--black-a60);
+  line-height: 1.333;
+  font-size: 12px;
+}
+.social-count__comment:after {
+  content: "\00b7";
+  font-size: 12px;
+  color: var(--black-a60);
+  vertical-align: middle;
+  font-weight: 700;
+  display: inline;
+  margin-left: 4px;
+}
+
+.social-count__share-text {
+  display: flex;
+  align-items: center;
+}
+
+.shares {
+  line-height: 1.333;
+  color: var(--black-a60);
+  font-size: 12px;
+}
+
+.post-card__social {
+  display: flex;
+  padding: 4px 12px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+}
+
+.social__footer-btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.footer-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 8px;
+  color: var(--black-a60);
+  width: 100%;
+}
+.footer-button:hover {
+  background-color: var(--black-a08);
+  border-radius: 4px;
+}
+
+.footer-button span {
+  display: flex;
+  font-size: 14px;
+  line-height: 28px;
+}
+.button-icon {
+  margin-left: -2px;
+}
+
+/*Socila button text hide*/
+@media screen and (max-width: 427px) {
+  .footer-button span {
+    display: none;
+  }
 }
