@@ -1,4 +1,70 @@
-h1 {
-  color: hotpink;
-  font-family: cursive;
+/* Default font and small reset css*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+}
+
+/* Color control*/
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --bg-color: rgb(243, 242, 239);
+  --black-a08: rgba(0, 0, 0, 0.08);
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1180px;
+}
+
+.product-area {
+  background-color: var(--white);
+  box-shadow: 0px 0px 0px 1px var(--black-a08);
+  border-radius: 8px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.product img {
+  border-bottom: 1px solid var(--black-a08);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.name {
+  display: flex;
+  max-width: 310px;
+  padding: 8px 15px;
+  min-height: 64px;
+}
+.name span {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--black);
 }
